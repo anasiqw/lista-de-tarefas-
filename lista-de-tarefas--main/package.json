@@ -1,0 +1,15 @@
+{
+    "name": "projeto-lista-tarefas",
+    "version": "1.0.0",
+    "description": "Sistema de lista de tarefas utilizando POO em JavaScript",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "prompt-sync": "^4.2.0"
+    }
+  }
+  
