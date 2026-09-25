@@ -1,16 +1,25 @@
-class Tarefa {
+const Lista = require("./Lista")
+
+class Tarefa extends Lista {
+    #nome
+    #concluida
+
     constructor(nome) {
-        this.nome = nome
-        this.concluida = false
+        super("Tarefa")
+        this.#nome = nome
+        this.#concluida = false
     }
+
     concluir() {
-        this.concluida = true
+        this.#concluida = true
     }
+
     mostrar() {
-        if (this.concluida) {
-            return `[X] ${this.nome}`
+        if (this.#concluida) {
+            return `[X] ${this.#nome}`
         }
-        return `[ ] ${this.nome}`
+        return `[ ] ${this.#nome}`
     }
 }
+
 module.exports = Tarefa

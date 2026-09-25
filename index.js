@@ -1,41 +1,40 @@
 const prompt = require("prompt-sync")()
 const Tarefa = require("./Tarefa")
 const Lista = require("./Lista")
-
 const lista = new Lista("Minha Lista")
 let opcao = 0
 
 while (opcao !== 5) {
-    console.log("LISTA DE TAREFAS\n\n1. Adicionar tarefa\n2. Mostrar tarefas\n3. Concluir tarefa\n4. Remover tarefa\n5. Sair")
+    console.log("\nLISTA DE TAREFAS")
+    console.log("1. Adicionar")
+    console.log("2. Mostrar")
+    console.log("3. Concluir")
+    console.log("4. Remover")
+    console.log("5. Sair")
 
-    opcao = parseInt(prompt("Escolha uma opção: "))
+    opcao = parseInt(prompt("Opção: "))
 
     if (opcao === 1) {
-        const nome = prompt("Digite o nome da tarefa: ")
+        const nome = prompt("Nome da tarefa: ")
         const tarefa = new Tarefa(nome)
         lista.adicionarTarefa(tarefa)
-        console.log("Tarefa adicionada!")
+        console.log("Tarefa adicionada")
     }
-
     if (opcao === 2) {
         lista.mostrarTarefas()
     }
-
     if (opcao === 3) {
         lista.mostrarTarefas()
-
-        const posicao = parseInt(prompt("Qual tarefa deseja concluir? "))
+        const posicao = parseInt(prompt("Número da tarefa: "))
         lista.concluirTarefa(posicao - 1)
-        console.log("Tarefa concluída!")
+        console.log("Tarefa concluída")
     }
-
     if (opcao === 4) {
         lista.mostrarTarefas()
-
-        const posicao = parseInt(prompt("Qual tarefa deseja remover? "))
+        const posicao = parseInt(prompt("Número da tarefa: "))
         lista.removerTarefa(posicao - 1)
         console.log("Tarefa removida")
     }
 }
 
-console.log("fim")
+console.log("Fim")
